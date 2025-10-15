@@ -15,3 +15,9 @@ for (let item of testSet1) {
 
 const sum = [...testSet1].reduce((accum, current) => accum + current, 0);
 console.log(sum);
+
+testSet1.delete(2);
+console.log(testSet1);
+
+testSet1.clear();
+console.log(testSet1);
