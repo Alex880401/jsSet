@@ -21,3 +21,25 @@ console.log(testSet1);
 
 testSet1.clear();
 console.log(testSet1);
+
+// 2.
+
+const testSet2 = new Set([1,6,9,4,9,1,5,6]);
+console.log(testSet2);
+
+for(let item of [5, 10, 11]) {
+    testSet2.add(item);
+};
+
+console.log(testSet2);
+
+// const arr1 = [1,6,9,4,9,1,5,6];
+// const arr2 = [5,10,11];
+// const unitedArr = arr1.concat(arr2)
+
+// const testSet3 = new Set(unitedArr);
+// console.log(testSet3);
+
+
+
+
