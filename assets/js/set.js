@@ -40,6 +40,27 @@ console.log(testSet2);
 // const testSet3 = new Set(unitedArr);
 // console.log(testSet3);
 
+// 3.
 
+const messages = [
+  { id: 1, name: 'Ivo', message: 'hello', date: new Date() },
+  { id: 2, name: 'Ivo', message: 'how are you', date: new Date() },
+  { id: 3, name: 'Wally', message: 'hi)', date: new Date() },
+  { id: 4, name: 'Wally', message: 'fine)', date: new Date() },
+];
 
+// 3.1.
 
+const usersName = [...(new Set(messages.map(item => item.name)))];
+console.log(usersName);
+
+const usersMassages = new Map();
+
+for (const { name, message, date } of messages) {
+  if (!usersMassages.has(name)) {
+    usersMassages.set(name, []);
+  }
+  usersMassages.get(name).push({message, date });
+}
+
+console.log(usersMassages);
