@@ -54,13 +54,16 @@ const messages = [
 const usersName = [...(new Set(messages.map(item => item.name)))];
 console.log(usersName);
 
+// 3.2.
+
 const usersMassages = new Map();
 
-for (const { name, message, date } of messages) {
+for (const {name, message, date} of messages) {
   if (!usersMassages.has(name)) {
     usersMassages.set(name, []);
-  }
-  usersMassages.get(name).push({message, date });
-}
+  };
+
+  usersMassages.get(name).push({message, date});
+};
 
 console.log(usersMassages);
