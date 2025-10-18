@@ -56,14 +56,18 @@ console.log(usersName);
 
 // 3.2.
 
-const usersMassages = new Map();
-
-for (const {name, message, date} of messages) {
-  if (!usersMassages.has(name)) {
-    usersMassages.set(name, []);
-  };
-
-  usersMassages.get(name).push({message, date});
-};
+const usersMassages = new Map(
+  usersName.map(
+    itemName => [
+      itemName, messages.filter(
+        item => item.name === itemName).map(
+          item => {
+            return {itemMessage: item.message, itemDate: item.date};
+          }
+        )
+      ]
+    )
+  );
 
 console.log(usersMassages);
+
